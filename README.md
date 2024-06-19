@@ -17,4 +17,5 @@
 - Discrete categorical variables are: ['record', 'type']
 
 - Discrete count variabkes are: ['0_pre-RR', '0_post-RR', '0_qrs_interval', '0_pq_interval', '0_qt_interval', '0_st_interval', '1_pre-RR', '1_post-RR', '1_qrs_interval', '1_pq_interval', '1_qt_interval', '1_st_interval']
+
 ```

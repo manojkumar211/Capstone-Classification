@@ -25,9 +25,10 @@ discrete_categorical=['record','type']
 discrete_count=['0_pre-RR','0_post-RR','0_qrs_interval','0_pq_interval','0_qt_interval','0_st_interval','1_pre-RR','1_post-RR','1_qrs_interval',
                 '1_pq_interval','1_qt_interval','1_st_interval']
 
-print(continuous_variables)
-print("##"*20)
-print(discrete_categorical)
-print("##"*20)
-print(discrete_count)
+df[continuous_variables].plot()
+plt.title("Countinuous Variables Plot")
+plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/countinuous_variables.png")
 
+df[discrete_count].plot()
+plt.title("Discrete Count Variables Plot")
+plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/discrete_count.png")
