@@ -34,3 +34,38 @@
 
 - Above parameters are based on the ECG Waves or Strokes.
 ```
+
+
+# Columns:
+```
+- Before analyse the columns we apllied some data cleaning techniques like, replaced some elements name.
+those are
+----------------
+I01-1 to I75-75
+N- Normal & 0
+VEB- 1
+SVEB- 2
+F- 3
+Q- 4 with new column as type_new variable based on type variable.
+```
+
+## record:
+```
+- In this column, we are having 75 unique values.
+- In this unique values the 36 number is most repeated.
+- The record column has skewness with 0.0290, which we consider as a symmetrical distribution. not as a non symmetrical distribution.
+- The record column's variance value is 464.3977 and standard deviation value is 21.5498, which are very low. that mean the data points are spred very close to mean.
+- The record column has 0.036% correlation with Dependent variables (type/type_new variable)
+            record  type_new
+record    1.000000  0.036071
+type_new  0.036071  1.000000
+--------------------------------------------------------------
+count    175729.000000
+mean         37.219406
+std          21.549952
+min           1.000000
+25%          19.000000
+50%          37.000000
+75%          56.000000
+max          75.000000
+```
