@@ -117,5 +117,6 @@ type_new	-9.646879	0.150552
 0_pre-RR	1.000000	-0.402929
 type_new	-0.402929	1.000000
 
+- This feature has Outliers. so, we need to apply IQR method to replace the outliers with upper limit or lower limit values.
 
 ```
