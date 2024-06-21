@@ -69,3 +69,16 @@ min           1.000000
 75%          56.000000
 max          75.000000
 ```
+## type:
+```
+- The type column will going to treat as a Dependent variable in this dataset.
+- The type column having 5 unique values, those are Normal, VEB, SVEB, F, and Q.
+['Normal', 'VEB', 'SVEB', 'F', 'Q']
+- Normal element has 153546 values.
+- VEB element has 20000 values.
+- SVEB element has 1958 values.
+- F element has 219 values.
+- Q element has 6 values.
+- apart from the Normal element all elements are come under not-normal.
+
+```
