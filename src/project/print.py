@@ -1,4 +1,4 @@
-from eda import record_column
+from eda import record_column,type_column,pre_RR1_column
 
 
 print(record_column.record_des)
@@ -8,3 +8,19 @@ print('##'*20)
 print(record_column.record_corr)
 print('##'*20)
 print(record_column.record_std)
+print('##'*20)
+print(type_column.type_count)
+print('##'*20)
+print('0_pre-RR description :',pre_RR1_column.pre_RR1_des)
+print('##'*20)
+print('0_pre-RR Null values :',pre_RR1_column.pre_RR1_null)
+print('##'*20)
+print('0_pre-RR Skewness :',pre_RR1_column.pre_RR1_skewness)
+print('##'*20)
+print('0_pre-RR Variance :',pre_RR1_column.pre_RR1_var)
+print('##'*20)
+print('0_pre-RR Standard Deviation :',pre_RR1_column.pre_RR1_std)
+print('##'*20)
+print('0_pre-RR Covariance :',pre_RR1_column.pre_RR1_cov)
+print('##'*20)
+print('0_pre-RR Correlation :',pre_RR1_column.pre_RR1_corr)

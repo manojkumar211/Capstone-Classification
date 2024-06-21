@@ -74,11 +74,48 @@ max          75.000000
 - The type column will going to treat as a Dependent variable in this dataset.
 - The type column having 5 unique values, those are Normal, VEB, SVEB, F, and Q.
 ['Normal', 'VEB', 'SVEB', 'F', 'Q']
-- Normal element has 153546 values.
-- VEB element has 20000 values.
-- SVEB element has 1958 values.
-- F element has 219 values.
-- Q element has 6 values.
+type
+Normal    153546
+VEB        20000
+SVEB        1958
+F            219
+Q              6
 - apart from the Normal element all elements are come under not-normal.
+
+```
+
+## 0_pre-RR:
+```
+- 0_pre-RR column has continuous values.
+0_pre-RR description : count    175729.000000
+mean        197.180095
+std          61.704376
+min          49.000000
+25%         153.000000
+50%         188.000000
+75%         235.000000
+max         506.000000
+Name: 0_pre-RR, dtype: float64
+
+- It has no Null values.
+- It has skewness with 0.59. so, we need to apply feature transformation techniques to make it as a symmetrical distribution.
+0_pre-RR Skewness : 0.5917210444006341
+
+- It has variance with 3807.408. which is very low. nothing but data poits spredding is very near to the mean.
+0_pre-RR Variance : 3807.4083522810574
+
+- It has standard deviation with 61.704. which is very low. nothing but data poits spredding is very near to the mean.
+0_pre-RR Standard Deviation : 61.70420044276611
+
+- This feature is inversely proportional. which means it has covariance in negative values.
+ 	         0_pre-RR	 type_new
+0_pre-RR	3807.430019	-9.646879
+type_new	-9.646879	0.150552
+
+- This feature has correlation with 0.40.
+	        0_pre-RR	 type_new
+0_pre-RR	1.000000	-0.402929
+type_new	-0.402929	1.000000
+
 
 ```
