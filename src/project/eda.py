@@ -126,6 +126,19 @@ except Exception as e:
 
 
 
+try:
+
+    fig,ax=plt.subplots(figsize=(8,5))
+    sns.heatmap(df[['record','type_new']].corr(),annot=True,cmap='CMRmap',ax=ax)
+    plt.title('HeatMap plot for record Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/record/record_heatmap.png')
+
+except Exception as e:
+    raise Exception(f'error find in heatmap plot :\n'+str(e))
+
+
+
+
 # Type Column:-
 
 class type_column:
@@ -206,61 +219,63 @@ except Exception as e:
     raise Exception(f'error find in count plot :\n'+str(e))
 
 
+
+
 # 0_pre-RR column:-
 
-class pre_RR1_column:
+class pre_RR0_column:
 
     try:
 
-        pre_RR1_des=df['0_pre-RR'].describe()
-        pre_RR1_null=df['0_pre-RR'].isnull().sum()
-        pre_RR1_skewness=df['0_pre-RR'].skew()
-        pre_RR1_var=df['0_pre-RR'].var(ddof=0)
-        pre_RR1_std=df['0_pre-RR'].std(ddof=0)
-        pre_RR1_cov=df[['0_pre-RR','type_new']].cov()
-        pre_RR1_corr=df[['0_pre-RR','type_new']].corr()
+        pre_RR0_des=df['0_pre-RR'].describe()
+        pre_RR0_null=df['0_pre-RR'].isnull().sum()
+        pre_RR0_skewness=df['0_pre-RR'].skew()
+        pre_RR0_var=df['0_pre-RR'].var(ddof=0)
+        pre_RR0_std=df['0_pre-RR'].std(ddof=0)
+        pre_RR0_cov=df[['0_pre-RR','type_new']].cov()
+        pre_RR0_corr=df[['0_pre-RR','type_new']].corr()
 
     except Exception as e:
         raise Exception(f'Error find in pre_RR1_column :\n'+str(e))
     
 
-    def __init__(self,pre_RR1_des,pre_RR1_null,pre_RR1_skewness,pre_RR1_var,pre_RR1_std,pre_RR1_cov,pre_RR1_corr):
+    def __init__(self,pre_RR0_des,pre_RR0_null,pre_RR0_skewness,pre_RR0_var,pre_RR0_std,pre_RR0_cov,pre_RR0_corr):
 
         try:
 
-            self.pre_RR1_des=pre_RR1_des
-            self.pre_RR1_null=pre_RR1_null
-            self.pre_RR1_skewness=pre_RR1_skewness
-            self.pre_RR1_var=pre_RR1_var
-            self.pre_RR1_std=pre_RR1_std
-            self.pre_RR1_cov=pre_RR1_cov
-            self.pre_RR1_corr=pre_RR1_corr
+            self.pre_RR0_des=pre_RR0_des
+            self.pre_RR0_null=pre_RR0_null
+            self.pre_RR0_skewness=pre_RR0_skewness
+            self.pre_RR0_var=pre_RR0_var
+            self.pre_RR0_std=pre_RR0_std
+            self.pre_RR0_cov=pre_RR0_cov
+            self.pre_RR0_corr=pre_RR0_corr
 
         except Exception as e:
             raise Exception(f'Error find in pre_RR1_column at init level :\n' + str(e))
 
     try:
 
-        def pre_RR1_des_column(self):
-            return self.pre_RR1_des
+        def pre_RR0_des_column(self):
+            return self.pre_RR0_des
         
-        def pre_RR1_null_column(self):
-            return self.pre_RR1_null
+        def pre_RR0_null_column(self):
+            return self.pre_RR0_null
         
-        def pre_RR1_skewness_column(self):
-            return self.pre_RR1_skewness
+        def pre_RR0_skewness_column(self):
+            return self.pre_RR0_skewness
         
-        def pre_RR1_var_column(self):
-            return self.pre_RR1_var
+        def pre_RR0_var_column(self):
+            return self.pre_RR0_var
         
-        def pre_RR1_std_column(self):
-            return self.pre_RR1_std
+        def pre_RR0_std_column(self):
+            return self.pre_RR0_std
         
-        def pre_RR1_cov_column(self):
-            return self.pre_RR1_cov
+        def pre_RR0_cov_column(self):
+            return self.pre_RR0_cov
         
-        def pre_RR1_corr_column(self):
-            return self.pre_RR1_corr
+        def pre_RR0_corr_column(self):
+            return self.pre_RR0_corr
         
     except Exception as e:
         raise Exception(f'Error find in pre_RR1_column at function level :\n' + str(e))
@@ -315,3 +330,128 @@ except Exception as e:
     raise Exception(f'error find in scatter plot :\n'+str(e))
 
 
+# 0_pre-RR column heatmap plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(8,5))
+    sns.heatmap(df[['0_pre-RR','type_new']].corr(),annot=True,cmap='gist_ncar',ax=ax)
+    plt.title('HeatMap plot for 0_pre-RR Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_pre-RR/0_pre-RR_heatmap.png')
+
+except Exception as e:
+    raise Exception(f'error find in heatmap plot :\n'+str(e))
+
+
+
+# 0_post-RR column analysis:-
+
+class post_RR0_column:
+
+    try:
+
+        post_RR0_des=df['0_post-RR'].describe()
+        post_RR0_null=df['0_post-RR'].isnull().sum()
+        post_RR0_skewness=df['0_post-RR'].skew()
+        post_RR0_var=df['0_post-RR'].var(ddof=0)
+        post_RR0_std=df['0_post-RR'].std(ddof=0)
+
+    except Exception as e:
+        raise Exception(f'Error find in post_RR1_column :\n'+str(e))
+    
+
+    def __init__(self,post_RR0_des,post_RR0_null,post_RR0_skewness,post_RR0_var,post_RR0_std):
+
+        try:
+
+            self.post_RR0_des=post_RR0_des
+            self.post_RR0_null=post_RR0_null
+            self.post_RR0_skewness=post_RR0_skewness
+            self.post_RR0_var=post_RR0_var
+            self.post_RR0_std=post_RR0_std
+
+        except Exception as e:
+            raise Exception(f'Error find in post_RR1_column at init level :\n' + str(e))
+        
+
+    try:
+
+        def post_RR0_des_column(self):
+            return self.post_RR0_des
+        
+        def post_RR0_null_column(self):
+            return self.post_RR0_null
+        
+        def post_RR0_skewness_column(self):
+            return self.post_RR0_skewness
+        
+        def post_RR0_var_column(self):
+            return self.post_RR0_var
+        
+        def post_RR0_std_column(self):
+            return self.post_RR0_std
+        
+    except Exception as e:
+        raise Exception(f'Error find in post_RR1_column at function level :\n' + str(e))
+    
+# 0_post-RR column histo plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.histplot(data=df['0_post-RR'],ax=ax)
+    plt.title('Histo plot for 0_post-RR Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_post-RR/0_post-RR_histo.png')
+
+except Exception as e:
+    raise Exception(f'error find in histo plot :\n'+str(e))
+
+# 0_post-RR column distribution plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.kdeplot(data=df['0_post-RR'],ax=ax,color='r')
+    plt.title('Distribution plot for 0_post-RR Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_post-RR/0_post-RR_dist.png')
+
+except Exception as e:
+    raise Exception(f'error find in distribution plot :\n'+str(e))
+
+# 0_post-RR column box plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.boxplot(data=df['0_post-RR'],ax=ax)
+    plt.title('Box plot for 0_post-RR Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_post-RR/0_post-RR_box.png')
+
+except Exception as e:
+    raise Exception(f'error find in box plot :\n'+str(e))
+
+# 0_post-RR column scatter plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.scatterplot(data=df['0_post-RR'],ax=ax)
+    plt.title('Scatter plot for 0_post-RR Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_post-RR/0_post-RR_scatter.png')
+
+except Exception as e:
+    raise Exception(f'error find in scatter plot :\n'+str(e))
+
+# 0_post-RR column heatmap plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(8,5))
+    sns.heatmap(df[['0_post-RR','type_new']].corr(),annot=True,cmap='OrRd',ax=ax)
+    plt.title('HeatMap plot for 0_post-RR Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_post-RR/0_post-RR_heatmap.png')
+
+except Exception as e:
+    raise Exception(f'error find in heatmap plot :\n'+str(e))
+
+    

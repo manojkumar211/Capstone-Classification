@@ -86,7 +86,7 @@ Q              6
 
 ## 0_pre-RR:
 ```
-- 0_pre-RR column has continuous values.
+- 0_pre-RR column has descrite count values.
 0_pre-RR description : count    175729.000000
 mean        197.180095
 std          61.704376
@@ -118,5 +118,28 @@ type_new	-9.646879	0.150552
 type_new	-0.402929	1.000000
 
 - This feature has Outliers. so, we need to apply IQR method to replace the outliers with upper limit or lower limit values.
+
+```
+
+## 0_post-RR:
+```
+- 0_post-RR column has descrite count variable.
+0_post-RR description : count    175729.000000
+mean        197.197452
+std          61.721591
+min          71.000000
+25%         153.000000
+50%         188.000000
+75%         235.000000
+max         506.000000
+Name: 0_post-RR, dtype: float64
+
+- This column does not have any null values.
+- This column has outlier.
+- It has variance value with 3809.53306. which is very low. nothing but data poits spredding is very near to the mean.
+0_post-RR Variance : 3809.533069777311
+- It has standard deviation value with 61.721. which is very low. nothing but data poits spredding is very near to the mean.
+0_post-RR Standard Deviation : 61.72141500141836
+- This column has with skewness value with 0.5928. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
 
 ```

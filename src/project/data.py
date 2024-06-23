@@ -86,10 +86,35 @@ discrete_categorical=['record','type']
 discrete_count=['0_pre-RR','0_post-RR','0_qrs_interval','0_pq_interval','0_qt_interval','0_st_interval','1_pre-RR','1_post-RR','1_qrs_interval',
                 '1_pq_interval','1_qt_interval','1_st_interval']
 
-df[continuous_variables].plot()
-plt.title("Countinuous Variables Plot")
-plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/countinuous_variables.png")
 
-df[discrete_count].plot()
-plt.title("Discrete Count Variables Plot")
-plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/discrete_count.png")
+try:
+
+    df[continuous_variables].plot()
+    plt.title("Countinuous Variables Plot")
+    plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/countinuous_variables.png")
+
+except Exception as e:
+    raise Exception(f'error find in continuous variable plot :\n'+str(e))
+
+
+try:
+
+    df[discrete_count].plot()
+    plt.title("Discrete Count Variables Plot")
+    plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/discrete_count.png")
+
+except Exception as e:
+    raise Exception(f'error find in discrete count variable plot :\n'+str(e))
+
+
+try:
+
+    fig,ax=plt.subplots(figsize=(40,20))
+    sns.heatmap(df[continuous_variables].corr(),annot=True,cmap='Set2',ax=ax)
+    plt.title('Heatmap for all continuous variables')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/countinuous_variables_heatmap.png')
+
+except Exception as e:
+    raise Exception(f'error find in continuous variable heatmap :\n'+str(e))
+
+
