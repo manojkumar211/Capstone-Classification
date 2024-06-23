@@ -568,3 +568,333 @@ except Exception as e:
 
 
 
+# 0_tPeak column analysis:
+
+class tPeak0_column:
+
+    try:
+
+        tPeak0_des=df['0_tPeak'].describe()
+        tPeak0_null=df['0_tPeak'].isnull().sum()
+        tPeak0_skewness=df['0_tPeak'].skew()
+        tPeak0_var=df['0_tPeak'].var(ddof=0)
+        tPeak0_std=df['0_tPeak'].std(ddof=0)
+
+    except Exception as e:
+        raise Exception(f'Error find in tPeak1_column :\n'+str(e))
+
+
+    def __init__(self,tPeak0_des,tPeak0_null,tPeak0_skewness,tPeak0_var,tPeak0_std):
+
+        try:
+
+            self.tPeak0_des = tPeak0_des
+            self.tPeak0_null = tPeak0_null
+            self.tPeak0_skewness = tPeak0_skewness
+            self.tPeak0_var = tPeak0_var
+            self.tPeak0_std = tPeak0_std
+
+        except Exception as e:
+            raise Exception(f'Error find in tPeak1_column at init level :\n' + str(e))
+        
+    try:
+
+        def tPeak0_des_column(self):
+            return self.tPeak0_des
+        
+        def tPeak0_null_column(self):
+            return self.tPeak0_null
+        
+        def tPeak0_skewness_column(self):
+            return self.tPeak0_skewness
+        
+        def tPeak0_var_column(self):
+            return self.tPeak0_var
+        
+        def tPeak0_std_column(self):
+            return self.tPeak0_std
+        
+    except Exception as e:
+        raise Exception(f'Error find in tPeak1_column at function level :\n' + str(e))
+    
+    
+# 0_tPeak column histo plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.histplot(data=df['0_tPeak'],ax=ax)
+    plt.title('Histo plot for 0_tPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_tPeak/0_tPeak_histo.png')
+
+except Exception as e:
+    raise Exception(f'error find in histo plot :\n'+str(e))
+
+# 0_tPeak column distribution plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.kdeplot(data=df['0_tPeak'],ax=ax,color='r')
+    plt.title('Distribution plot for 0_tPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_tPeak/0_tPeak_dist.png')
+
+except Exception as e:
+    raise Exception(f'error find in distribution plot :\n'+str(e))
+
+# 0_tPeak column box plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.boxplot(data=df['0_tPeak'],ax=ax)
+    plt.title('Box plot for 0_tPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_tPeak/0_tPeak_box.png')
+
+except Exception as e:
+    raise Exception(f'error find in box plot :\n'+str(e))
+
+# 0_tPeak column scatter plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.scatterplot(data=df['0_tPeak'],ax=ax)
+    plt.title('Scatter plot for 0_tPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_tPeak/0_tPeak_scatter.png')
+
+except Exception as e:
+    raise Exception(f'error find in scatter plot :\n'+str(e))
+
+# 0_tPeak column heatmap plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(8,5))
+    sns.heatmap(df[['0_tPeak','type_new']].corr(),annot=True,cmap='Greens',ax=ax)
+    plt.title('HeatMap plot for 0_tPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_tPeak/0_tPeak_heatmap.png')
+
+except Exception as e:
+    raise Exception(f'error find in heatmap plot :\n'+str(e))
+
+
+# 0_sPeak column analysis:
+
+class sPeak0_column:
+
+    try:
+
+        sPeak0_des=df['0_sPeak'].describe()
+        sPeak0_null=df['0_sPeak'].isnull().sum()
+        sPeak0_skewness=df['0_sPeak'].skew()
+        sPeak0_var=df['0_sPeak'].var(ddof=0)
+        sPeak0_std=df['0_sPeak'].std(ddof=0)
+
+    except Exception as e:
+        raise Exception(f'Error find in sPeak1_column :\n'+str(e))
+
+    def __init_(self,sPeak0_des,sPeak0_null,sPeak0_skewness,sPeak0_var,sPeak0_std):
+
+        try:
+
+            self.sPeak0_des = sPeak0_des
+            self.sPeak0_null = sPeak0_null
+            self.sPeak0_skewness = sPeak0_skewness
+            self.sPeak0_var = sPeak0_var
+            self.sPeak0_std = sPeak0_std
+
+        except Exception as e:
+            raise Exception(f'Error find in sPeak1_column at init level :\n' + str(e))
+        
+    try:
+
+
+        def sPeak0_des_column(self):
+            return self.sPeak0_des
+        
+        def sPeak0_null_column(self):
+            return self.sPeak0_null
+        
+        def sPeak0_skewness_column(self):
+            return self.sPeak0_skewness
+        
+        def sPeak0_var_column(self):
+            return self.sPeak0_var
+        
+        def sPeak0_std_column(self):
+            return self.sPeak0_std
+        
+    except Exception as e:
+        raise Exception(f'Error find in sPeak1_column at function level :\n' + str(e))
+    
+# 0_sPeak column histo plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.histplot(data=df['0_sPeak'],ax=ax)
+    plt.title('Histo plot for 0_sPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_sPeak/0_sPeak_histo.png')
+
+except Exception as e:
+    raise Exception(f'error find in histo plot :\n'+str(e))
+
+# 0_sPeak column distribution plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.kdeplot(data=df['0_sPeak'],ax=ax,color='r')
+    plt.title('Distribution plot for 0_sPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_sPeak/0_sPeak_dist.png')
+
+except Exception as e:
+    raise Exception(f'error find in distribution plot :\n'+str(e))
+
+# 0_sPeak column box plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.boxplot(data=df['0_sPeak'],ax=ax)
+    plt.title('Box plot for 0_sPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_sPeak/0_sPeak_box.png')
+
+except Exception as e:
+    raise Exception(f'error find in box plot :\n'+str(e))
+
+# 0_sPeak column scatter plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.scatterplot(data=df['0_sPeak'],ax=ax)
+    plt.title('Scatter plot for 0_sPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_sPeak/0_sPeak_scatter.png')
+
+except Exception as e:
+    raise Exception(f'error find in scatter plot :\n'+str(e))
+
+# 0_sPeak column heatmap plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(8,5))
+    sns.heatmap(df[['0_sPeak','type_new']].corr(),annot=True,cmap='winter',ax=ax)
+    plt.title('HeatMap plot for 0_sPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_sPeak/0_sPeak_heatmap.png')
+
+except Exception as e:
+    raise Exception('error find in Heatmap plot :\n'+str(e))
+
+
+# 0_qPeak column analysis:
+
+class qPeak0_column:
+
+    try:
+
+        qPeak0_des=df['0_qPeak'].describe()
+        qPeak0_null=df['0_qPeak'].isnull().sum()
+        qPeak0_skewness=df['0_qPeak'].skew()
+        qPeak0_var=df['0_qPeak'].var(ddof=0)
+        qPeak0_std=df['0_qPeak'].std(ddof=0)
+
+    except Exception as e:
+        raise Exception(f'Error find in qPeak1_column :\n'+str(e))
+    
+
+    def __init__(self,qPeak0_des,qPeak0_null,qPeak0_skewness,qPeak0_var,qPeak0_std):
+
+        try:
+
+            self.qPeak0_des = qPeak0_des
+            self.qPeak0_null = qPeak0_null
+            self.qPeak0_skewness = qPeak0_skewness
+            self.qPeak0_var = qPeak0_var
+            self.qPeak0_std = qPeak0_std
+
+        except Exception as e:
+            raise Exception(f'Error find in qPeak1_column at init level :\n' + str(e))
+        
+    try:
+
+        def qPeak0_des_column(self):
+            return self.qPeak0_des
+        
+        def qPeak0_null_column(self):
+            return self.qPeak0_null
+        
+        def qPeak0_skewness_column(self):
+            return self.qPeak0_skewness
+        
+        def qPeak0_var_column(self):
+            return self.qPeak0_var
+        
+        def qPeak0_std_column(self):
+            return self.qPeak0_std
+        
+    except Exception as e:
+        raise Exception(f'Error find in qPeak1_column at function level :\n' + str(e))
+    
+
+# 0_qPeak column histo plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.histplot(data=df['0_qPeak'],ax=ax)
+    plt.title('Histo plot for 0_qPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_qPeak/0_qPeak_histo.png')
+
+except Exception as e:
+    raise Exception(f'error find in histo plot for 0_qPeak :\n'+str(e))
+
+# 0_qPeak column distribution plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.kdeplot(data=df['0_qPeak'],ax=ax,color='r')
+    plt.title('Distribution plot for 0_qPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_qPeak/0_qPeak_dist.png')
+
+except Exception as e:
+    raise Exception(f'error in distribution plot for 0_qPeak :\n'+str(e))
+
+# 0_qPeak column box plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.boxplot(data=df['0_qPeak'],ax=ax)
+    plt.title('Box plot for 0_qPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_qPeak/0_qPeak_box.png')
+
+except Exception as e:
+    raise Exception(f'error find in Box plot for 0_qPeak :\n'+str(e))
+
+# 0_qPeak column scatter plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(5,5))
+    sns.scatterplot(data=df['0_qPeak'],ax=ax)
+    plt.title('Scatter plot for 0_qPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_qPeak/0_qPeak_scatter.png')
+
+except Exception as e:
+    raise Exception(f'error find in Scatter plot for 0_qPeak :\n'+str(e))
+
+# 0_qPeak column heatmap plot:
+
+try:
+
+    fig,ax=plt.subplots(figsize=(8,5))
+    sns.heatmap(df[['0_qPeak','type_new']].corr(),annot=True,cmap='winter',ax=ax)
+    plt.title('HeatMap plot for 0_qPeak Column')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/0_qPeak/0_qPeak_heatmap.png')
+
+except Exception as e:
+    raise Exception(f'error find in Heatmap plot for 0_qPeak :\n'+str(e))

@@ -169,3 +169,78 @@ Name: 0_pPeak, dtype: float64
 0_pPeak Skewness : 4.966560710063663
 
 ```
+
+## 0_tPeak:-
+```
+- This column has continuous values.
+0_pPeak description : count    175729.000000
+mean          0.117722
+std           0.636959
+min          -7.959463
+25%          -0.238145
+50%          -0.039699
+75%           0.223369
+max           4.633166
+Name: 0_tPeak, dtype: float64
+
+- It has some outliers.
+- It does not have any null values.
+- It has variance value with 0.4057. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Variance : 0.4057145200039443
+
+- It has standard deviation value with 0.6369. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Standard Deviation : 0.6369572356162887
+
+- This column has with skewness value with 2.0734541596544926. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+0_pPeak Skewness : 2.0734541596544926
+```
+
+# 0_sPeak:
+```
+- This column has continuous values.
+0_pPeak description : count    175729.000000
+mean         -0.586759
+std           0.799548
+min          -7.971319
+25%          -0.910381
+50%          -0.634711
+75%          -0.350441
+max           3.894399
+Name: 0_sPeak, dtype: float64
+
+- It has some outliers.
+- It does not have any null values.
+- It has variance value with 0.6392. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Variance : 0.6392730426021392
+
+- It has standard deviation value with 0.799. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Standard Deviation : 0.7995455225327318
+
+- This column has with skewness value with 0.9588. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+0_pPeak Skewness : 0.9588249355562364
+```
+
+## 0_qPeak:-
+```
+- This column has continuous values.
+0_pPeak description : count    175729.000000
+mean         -0.174214
+std           0.368802
+min          -7.113196
+25%          -0.176258
+50%          -0.105488
+75%          -0.054578
+max           3.129033
+Name: 0_qPeak, dtype: float64
+
+- It has some outliers.
+- It does not have any null values.
+- It has variance value with 0.1360. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Variance : 0.13601431469058167
+
+- It has standard deviation value with 0.3688. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Standard Deviation : 0.36880118585842653
+
+- This column has with skewness value with -4.572. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+0_pPeak Skewness : -4.572967178212863
+```
