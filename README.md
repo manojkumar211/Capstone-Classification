@@ -143,3 +143,29 @@ Name: 0_post-RR, dtype: float64
 - This column has with skewness value with 0.5928. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
 
 ```
+
+## 0_pPeak:
+```
+- This column has continuous values.
+0_pPeak description : count    175729.000000
+mean          0.039047
+std           0.192159
+min          -4.208601
+25%          -0.068575
+50%          -0.000857
+75%           0.108743
+max          10.565904
+Name: 0_pPeak, dtype: float64
+
+- It has some outliers.
+- It does not have any null values.
+- It has variance value with 0.0369. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Variance : 0.03692500315629287
+
+- It has standard deviation value with 0.1921. which is very low. nothing but data poits spredding is very near to the mean.
+0_pPeak Standard Deviation : 0.19215879671847674
+
+- This column has with skewness value with 4.966. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+0_pPeak Skewness : 4.966560710063663
+
+```
