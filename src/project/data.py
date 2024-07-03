@@ -79,19 +79,17 @@ class data_des:
 
 
 
-continuous_variables=['0_pPeak','0_tPeak','0_rPeak','0_sPeak','0_qPeak','0_qrs_morph0','0_qrs_morph1','0_qrs_morph2','0_qrs_morph3','0_qrs_morph4',
-                      '1_pPeak','1_tPeak','1_rPeak','1_sPeak','1_qPeak','1_qrs_morph0','1_qrs_morph1','1_qrs_morph2','1_qrs_morph3','1_qrs_morph4']
-discrete_categorical=['record','type']
+continuous_variables=['BMI','DiabetesPedigreeFunction']
+discrete_categorical=['Outcome']
 
-discrete_count=['0_pre-RR','0_post-RR','0_qrs_interval','0_pq_interval','0_qt_interval','0_st_interval','1_pre-RR','1_post-RR','1_qrs_interval',
-                '1_pq_interval','1_qt_interval','1_st_interval']
+discrete_count=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','Age']
 
 
 try:
 
     df[continuous_variables].plot()
     plt.title("Countinuous Variables Plot")
-    plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/countinuous_variables.png")
+    plt.savefig("C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/countinuous_variables.png")
 
 except Exception as e:
     raise Exception(f'error find in continuous variable plot :\n'+str(e))
@@ -101,7 +99,7 @@ try:
 
     df[discrete_count].plot()
     plt.title("Discrete Count Variables Plot")
-    plt.savefig("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/discrete_count.png")
+    plt.savefig("C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/discrete_count.png")
 
 except Exception as e:
     raise Exception(f'error find in discrete count variable plot :\n'+str(e))
@@ -109,10 +107,10 @@ except Exception as e:
 
 try:
 
-    fig,ax=plt.subplots(figsize=(40,20))
+    fig,ax=plt.subplots(figsize=(10,5))
     sns.heatmap(df[continuous_variables].corr(),annot=True,cmap='Set2',ax=ax)
     plt.title('Heatmap for all continuous variables')
-    plt.savefig('C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/plots/countinuous_variables_heatmap.png')
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/countinuous_variables_heatmap.png')
 
 except Exception as e:
     raise Exception(f'error find in continuous variable heatmap :\n'+str(e))
