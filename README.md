@@ -1,226 +1,247 @@
 # About Dataset:
 
 ```
-- Dataset is related to Arrhythmia disease which is nothing but blood circulation issue. The dataset is belongs to medical domain.
-- Dataset has 175729 - rows and 34 - columns.
+- Dataset is related to Diabetes disease which is nothing but suger level issue. The dataset is belongs to medical domain.
+- Dataset has 768 - rows and 9 - columns.
 - In this dataset, we do not have any duplicates records.
 - In this dataset, we do not have any Null values.
 - The cloumn names are
-['record', 'type', '0_pre-RR', '0_post-RR', '0_pPeak', '0_tPeak', '0_rPeak', '0_sPeak', '0_qPeak', '0_qrs_interval', '0_pq_interval', '0_qt_interval', '0_st_interval', '0_qrs_morph0', '0_qrs_morph1', '0_qrs_morph2', '0_qrs_morph3', '0_qrs_morph4', '1_pre-RR', '1_post-RR', '1_pPeak', '1_tPeak', '1_rPeak', '1_sPeak', '1_qPeak', '1_qrs_interval', '1_pq_interval', '1_qt_interval', '1_st_interval', '1_qrs_morph0', '1_qrs_morph1', '1_qrs_morph2', '1_qrs_morph3', '1_qrs_morph4']
+['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
 
 ```
 ```
-- In this dataset, we are having 20 - Countinuous variables, 2 - Discrete categorical variables and 12 - Discrete count variables. Those are.
+- In this dataset, we are having 2 - Countinuous variables, 1 - Discrete categorical variables and 6 - Discrete count variables. Those are.
 
-- Continuouse variables are: ['0_pPeak', '0_tPeak', '0_rPeak', '0_sPeak', '0_qPeak', '0_qrs_morph0', '0_qrs_morph1', '0_qrs_morph2', '0_qrs_morph3', '0_qrs_morph4', '1_pPeak', '1_tPeak', '1_rPeak', '1_sPeak', '1_qPeak', '1_qrs_morph0', '1_qrs_morph1', '1_qrs_morph2', '1_qrs_morph3', '1_qrs_morph4']
+- Continuouse variables are: ['BMI','DiabetesPedigreeFunction']
 
-- Discrete categorical variables are: ['record', 'type']
+- Discrete categorical variables are: ['Outcome']
 
-- Discrete count variabkes are: ['0_pre-RR', '0_post-RR', '0_qrs_interval', '0_pq_interval', '0_qt_interval', '0_st_interval', '1_pre-RR', '1_post-RR', '1_qrs_interval', '1_pq_interval', '1_qt_interval', '1_st_interval']
+- Discrete count variabkes are: ['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','Age']
 
 ```
 ## Some terminolagy for the Arrhythmia.
 ```
-- P wave = Atrial depolarization. The positive wave of depolarization spreads from the SA node and is conducted throughout the cells of the atria through gap junctions in that connect these cells.
-- PR segment = depolarization of the AV node. I.e. When current is passing through the AV node.  It’s a flat line because the wave is not strong enough to be recorded on the voltmeter.
-- PR interval = Wave goes over the atrium and through the AV node and ends just before it activates the ventricles to depolarize.
-- Q wave = Ventricular Septal Depolarization
-- R wave = Resultant or major ventricular muscle depolarization. The resultant vector is directed downward and leftward.
-- S Wave = Basal Ventricular depolarization, i.e. depolarization of the base of the ventricles. Note the apex of the heart is the L. pointed end. The base of the ventricles connects to the atria.
-- ST segment = During the ST segment, all the ventricular myocardium is depolarized. All have positive charges. So there is nothing potential difference to be recorded by the voltmeter (ECG machine). So you have a flat line.
-- T wave represents ventricular repolarization.
-- QT interval = Important because it captures the beginning of ventricular depolarization through the plateau phase to the ventricular repolarization. It covers the entire ventricular activity. During this time, the action potential was generated and terminated in the ventricular tissue. The beginning of the QRS complex is the start of ventricular systole and that goes until the end of the T wave. Ventricular diastole starts when the T wave ends. 
-- U wave. Sometimes the electrical activity of the ventricular papillary muscle is out of phase with the rest of the ventricles and will record as a “U” wave that shows after the T wave.
+- Pregnancies: How many times the person has had a pregnancies. In this dataset, might we have male and female.
 
-- Above parameters are based on the ECG Waves or Strokes.
+- Glucose: Glucose is the main type of sugar in the blood and is the major source of energy for the body's cells.
+A fasting blood sugar level less than 100 mg/dL (5.6 mmol/L) is normal. A fasting blood sugar level from 100 to 125 mg/dL (5.6 to 6.9 mmol/L) is considered prediabetes. If it's 126 mg/dL (7 mmol/L) or higher on two separate tests, you have diabetes. 
+
+- BloodPressure: Blood pressure is the pressure of circulating blood against the walls of blood vessels.
+A healthy systolic blood pressure is less than 120 mm Hg. A healthy diastolic pressure is less than 80 mm Hg. Your blood pressure is high when you have consistent systolic readings of 130 mm Hg or higher, or diastolic readings of 80 mm Hg or higher.
+
+- SkinThickness: The dermis is a tough but elastic support structure that houses nerves, blood vessels, lymphatics, and cutaneous appendages (pilosebaceous units, eccrine and apocrine sweat glands).
+It is thicker (averages 1 to 4 mm) than the epidermis which is about as thin as piece of paper.
+
+- Insulin: Insulin is a hormone that lowers the level of glucose (a type of sugar) in the blood.
+It's made by the beta cells of the pancreas and released into the blood when the glucose level goes up, such as after eating. Insulin helps glucose enter the body's cells, where it can be used for energy or stored for future use.
+
+- BMI: Body Mass Index (BMI) is a person's weight in kilograms divided by the square of height in meters. 
+BMI	Weight Status
+Below 18.5 ----->	Underweight
+18.5 – 24.9	----->  Healthy Weight
+25.0 – 29.9 ----->	Overweight
+30.0 and Above ----->	Obesity
+
+- DiabetesPedigreeFunction: The 'DiabetesPedigreeFunction' is a function that scores the probability of diabetes based on family history, with a realistic range of 0.08 to 2.42. Age has a realistic range from 21 to 81. The Outcome, in the target variable, 0 represents healthy people, and 1 represents those with diabetes.
+
+- Age: age of the person.
+
+- Outcome: Whether the person has Diabetes or not. If person has Diabetes, indicate that as 1, if the person has no Diabetes, indicate that as 0.
+
 ```
 
 
 # Columns:
-```
-- Before analyse the columns we apllied some data cleaning techniques like, replaced some elements name.
-those are
-----------------
-I01-1 to I75-75
-N- Normal & 0
-VEB- 1
-SVEB- 2
-F- 3
-Q- 4 with new column as type_new variable based on type variable.
-```
 
-## record:
+## Pregnancies:
 ```
-- In this column, we are having 75 unique values.
-- In this unique values the 36 number is most repeated.
-- The record column has skewness with 0.0290, which we consider as a symmetrical distribution. not as a non symmetrical distribution.
-- The record column's variance value is 464.3977 and standard deviation value is 21.5498, which are very low. that mean the data points are spred very close to mean.
-- The record column has 0.036% correlation with Dependent variables (type/type_new variable)
-            record  type_new
-record    1.000000  0.036071
-type_new  0.036071  1.000000
+- In this column, we are having 17 unique values.
+- In this unique values the 1 number is most repeated.
+- The Pregnancies column has skewness with 0.9016, which we consider as a symmetrical distribution. not as a non symmetrical distribution.
+- The Pregnancies column's variance value is 11.339 and standard deviation value is 3.367, which are very low. that mean the data points are spred very close to mean.
+- The Pregnancies column has 0.22% correlation with Dependent variables (type/type_new variable)
+- The Pregnancies column has Outliers.
+
+	        Pregnancies	Outcome
+Pregnancies	1.000000	0.221898
+Outcome	    0.221898	1.000000
+
 --------------------------------------------------------------
-count    175729.000000
-mean         37.219406
-std          21.549952
-min           1.000000
-25%          19.000000
-50%          37.000000
-75%          56.000000
-max          75.000000
-```
-## type:
-```
-- The type column will going to treat as a Dependent variable in this dataset.
-- The type column having 5 unique values, those are Normal, VEB, SVEB, F, and Q.
-['Normal', 'VEB', 'SVEB', 'F', 'Q']
-type
-Normal    153546
-VEB        20000
-SVEB        1958
-F            219
-Q              6
-- apart from the Normal element all elements are come under not-normal.
 
+count    768.000000
+mean       3.845052
+std        3.369578
+min        0.000000
+25%        1.000000
+50%        3.000000
+75%        6.000000
+max       17.000000
+Name: Pregnancies, dtype: float64
+```
+## Glucose:
+```
+- In this column, we are having 17 unique values.
+- In this unique values the 1 number is most repeated.
+- The Glucose column has skewness with 0.1737, which we consider as a symmetrical distribution. not as a non symmetrical distribution.
+- The Glucose column's variance value is 1022.248 and standard deviation value is 31.972, which are very low. that mean the data points are spred very close to mean.
+- The Glucose column has 0.47% correlation with Dependent variables (type/type_new variable)
+- The Glucose column has Outliers.
+
+	     Glucose	Outcome
+Glucose	1.000000	0.466581
+Outcome	0.466581	1.000000
+--------------------------------------------------------------
+
+count    768.000000
+mean     120.894531
+std       31.972618
+min        0.000000
+25%       99.000000
+50%      117.000000
+75%      140.250000
+max      199.000000
+Name: Glucose, dtype: float64
 ```
 
-## 0_pre-RR:
+## BloodPressure:
 ```
-- 0_pre-RR column has descrite count values.
-0_pre-RR description : count    175729.000000
-mean        197.180095
-std          61.704376
-min          49.000000
-25%         153.000000
-50%         188.000000
-75%         235.000000
-max         506.000000
-Name: 0_pre-RR, dtype: float64
+- BloodPressure column has descrite count values.
+count    768.000000
+mean      69.105469
+std       19.355807
+min        0.000000
+25%       62.000000
+50%       72.000000
+75%       80.000000
+max      122.000000
+Name: BloodPressure, dtype: float64
 
 - It has no Null values.
-- It has skewness with 0.59. so, we need to apply feature transformation techniques to make it as a symmetrical distribution.
-0_pre-RR Skewness : 0.5917210444006341
+- It has skewness with -1.843. so, we need to apply feature transformation techniques to make it as a symmetrical distribution.
+BloodPressure Skewness : -1.8436079833551302
 
-- It has variance with 3807.408. which is very low. nothing but data poits spredding is very near to the mean.
-0_pre-RR Variance : 3807.4083522810574
+- It has variance with 374.159. which is very low. nothing but data poits spredding is very near to the mean.
+BloodPressure Variance : 374.1594492594401
 
-- It has standard deviation with 61.704. which is very low. nothing but data poits spredding is very near to the mean.
-0_pre-RR Standard Deviation : 61.70420044276611
+- It has standard deviation with 19.3423. which is very low. nothing but data poits spredding is very near to the mean.
+BloodPressure Standard Deviation : 19.343201628981696
 
-- This feature is inversely proportional. which means it has covariance in negative values.
- 	         0_pre-RR	 type_new
-0_pre-RR	3807.430019	-9.646879
-type_new	-9.646879	0.150552
+- This feature is directly proportional. which means it has covariance in negative values.
+	            BloodPressure	Glucose
+BloodPressure	374.159449	94.307999
+Glucose	        94.307999	1020.917262
 
-- This feature has correlation with 0.40.
-	        0_pre-RR	 type_new
-0_pre-RR	1.000000	-0.402929
-type_new	-0.402929	1.000000
+- This feature has correlation with 0.15.
+	            BloodPressure	Outcome
+BloodPressure	1.000000	0.065068
+Outcome	        0.065068	1.000000
 
 - This feature has Outliers. so, we need to apply IQR method to replace the outliers with upper limit or lower limit values.
 
 ```
 
-## 0_post-RR:
+## SkinThickness:
 ```
-- 0_post-RR column has descrite count variable.
-0_post-RR description : count    175729.000000
-mean        197.197452
-std          61.721591
-min          71.000000
-25%         153.000000
-50%         188.000000
-75%         235.000000
-max         506.000000
-Name: 0_post-RR, dtype: float64
+- SkinThickness column has descrite count variable.
+count    768.000000
+mean      20.536458
+std       15.952218
+min        0.000000
+25%        0.000000
+50%       23.000000
+75%       32.000000
+max       99.000000
+Name: SkinThickness, dtype: float64
 
 - This column does not have any null values.
 - This column has outlier.
-- It has variance value with 3809.53306. which is very low. nothing but data poits spredding is very near to the mean.
-0_post-RR Variance : 3809.533069777311
-- It has standard deviation value with 61.721. which is very low. nothing but data poits spredding is very near to the mean.
-0_post-RR Standard Deviation : 61.72141500141836
-- This column has with skewness value with 0.5928. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+- It has variance value with 254.141. which is very low. nothing but data poits spredding is very near to the mean.
+SkinThickness Variance : 254.14189995659726
+- It has standard deviation value with 15.941. which is very low. nothing but data poits spredding is very near to the mean.
+SkinThickness Standard Deviation : 15.941828626496939
+- This column has with skewness value with 0.1093. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
 
 ```
 
-## 0_pPeak:
+## Insulin:-
 ```
 - This column has continuous values.
-0_pPeak description : count    175729.000000
-mean          0.039047
-std           0.192159
-min          -4.208601
-25%          -0.068575
-50%          -0.000857
-75%           0.108743
-max          10.565904
-Name: 0_pPeak, dtype: float64
+count    768.000000
+mean      79.799479
+std      115.244002
+min        0.000000
+25%        0.000000
+50%       30.500000
+75%      127.250000
+max      846.000000
+Name: Insulin, dtype: float64
 
 - It has some outliers.
 - It does not have any null values.
-- It has variance value with 0.0369. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Variance : 0.03692500315629287
+- It has variance value with 13263.886. which is very low. nothing but data poits spredding is very near to the mean.
+Insulin Variance : 13263.886874728734
 
-- It has standard deviation value with 0.1921. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Standard Deviation : 0.19215879671847674
+- It has standard deviation value with 115.168. which is very low. nothing but data poits spredding is very near to the mean.
+Insulin Standard Deviation : 115.16894926467262
 
-- This column has with skewness value with 4.966. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
-0_pPeak Skewness : 4.966560710063663
-
+- This column has with skewness value with 2.272. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+Insulin Skewness : 2.0734541596544926
 ```
 
-## 0_tPeak:-
+## BMI:
 ```
 - This column has continuous values.
-0_pPeak description : count    175729.000000
-mean          0.117722
-std           0.636959
-min          -7.959463
-25%          -0.238145
-50%          -0.039699
-75%           0.223369
-max           4.633166
-Name: 0_tPeak, dtype: float64
+count    768.000000
+mean      31.992578
+std        7.884160
+min        0.000000
+25%       27.300000
+50%       32.000000
+75%       36.600000
+max       67.100000
+Name: BMI, dtype: float64
 
 - It has some outliers.
 - It does not have any null values.
-- It has variance value with 0.4057. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Variance : 0.4057145200039443
+- It has variance value with 62.079. which is very low. nothing but data poits spredding is very near to the mean.
+BMI Variance : 62.079046478271486
 
-- It has standard deviation value with 0.6369. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Standard Deviation : 0.6369572356162887
+- It has standard deviation value with 7.879. which is very low. nothing but data poits spredding is very near to the mean.
+BMI Standard Deviation : 7.87902573154013
 
-- This column has with skewness value with 2.0734541596544926. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
-0_pPeak Skewness : 2.0734541596544926
+- This column has with skewness value with -0.428. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+BMI Skewness : -0.42898158845356543
+
 ```
 
-# 0_sPeak:
+
+
+# DiabetesPedigreeFunction:
 ```
 - This column has continuous values.
-0_pPeak description : count    175729.000000
-mean         -0.586759
-std           0.799548
-min          -7.971319
-25%          -0.910381
-50%          -0.634711
-75%          -0.350441
-max           3.894399
-Name: 0_sPeak, dtype: float64
+count    768.000000
+mean       0.471876
+std        0.331329
+min        0.078000
+25%        0.243750
+50%        0.372500
+75%        0.626250
+max        2.420000
+Name: DiabetesPedigreeFunction, dtype: float64
 
 - It has some outliers.
 - It does not have any null values.
-- It has variance value with 0.6392. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Variance : 0.6392730426021392
+- It has variance value with 0.1096. which is very low. nothing but data poits spredding is very near to the mean.
+DiabetesPedigreeFunction Variance : 0.10963569693840876
 
-- It has standard deviation value with 0.799. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Standard Deviation : 0.7995455225327318
+- It has standard deviation value with 0.331. which is very low. nothing but data poits spredding is very near to the mean.
+DiabetesPedigreeFunction Standard Deviation : 0.3311128160286291
 
-- This column has with skewness value with 0.9588. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
-0_pPeak Skewness : 0.9588249355562364
+- This column has with skewness value with 1.9199. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+DiabetesPedigreeFunction Skewness : 1.919911066307204
 ```
 
-## 0_qPeak:-
+## Age:-
 ```
 - This column has continuous values.
 0_pPeak description : count    175729.000000
@@ -236,11 +257,11 @@ Name: 0_qPeak, dtype: float64
 - It has some outliers.
 - It does not have any null values.
 - It has variance value with 0.1360. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Variance : 0.13601431469058167
+Age Variance : 0.13601431469058167
 
 - It has standard deviation value with 0.3688. which is very low. nothing but data poits spredding is very near to the mean.
-0_pPeak Standard Deviation : 0.36880118585842653
+Age Standard Deviation : 0.36880118585842653
 
 - This column has with skewness value with -4.572. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
-0_pPeak Skewness : -4.572967178212863
+Age Skewness : -4.572967178212863
 ```
