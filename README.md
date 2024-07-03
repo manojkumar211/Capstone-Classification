@@ -55,8 +55,7 @@ Below 18.5 ----->	Underweight
 
 ## Pregnancies:
 ```
-- In this column, we are having 17 unique values.
-- In this unique values the 1 number is most repeated.
+- Pregnancies column has descrite count values
 - The Pregnancies column has skewness with 0.9016, which we consider as a symmetrical distribution. not as a non symmetrical distribution.
 - The Pregnancies column's variance value is 11.339 and standard deviation value is 3.367, which are very low. that mean the data points are spred very close to mean.
 - The Pregnancies column has 0.22% correlation with Dependent variables (type/type_new variable)
@@ -80,8 +79,7 @@ Name: Pregnancies, dtype: float64
 ```
 ## Glucose:
 ```
-- In this column, we are having 17 unique values.
-- In this unique values the 1 number is most repeated.
+- Glucose column has descrite count values.
 - The Glucose column has skewness with 0.1737, which we consider as a symmetrical distribution. not as a non symmetrical distribution.
 - The Glucose column's variance value is 1022.248 and standard deviation value is 31.972, which are very low. that mean the data points are spred very close to mean.
 - The Glucose column has 0.47% correlation with Dependent variables (type/type_new variable)
@@ -165,7 +163,7 @@ SkinThickness Standard Deviation : 15.941828626496939
 
 ## Insulin:-
 ```
-- This column has continuous values.
+- Insulin column has descrite count variable.
 count    768.000000
 mean      79.799479
 std      115.244002
@@ -243,7 +241,7 @@ DiabetesPedigreeFunction Skewness : 1.919911066307204
 
 ## Age:-
 ```
-- This column has continuous values.
+- Age column has descrite count values.
 0_pPeak description : count    175729.000000
 mean         -0.174214
 std           0.368802
