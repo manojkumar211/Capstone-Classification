@@ -7,7 +7,7 @@ import seaborn as sns
 
 # Load the data:
 
-df=pd.read_csv("C:/AI&ML Engineer/Projects/Apple/Apple Arrhythmia Prediction/Arrhythmia.csv")
+df=pd.read_csv("C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/diabetes.csv")
 
 
 class data_des:
