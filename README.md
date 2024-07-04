@@ -19,7 +19,7 @@
 - Discrete count variabkes are: ['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','Age']
 
 ```
-## Some terminolagy for the Arrhythmia.
+## Some terminolagy for the Diabetes.
 ```
 - Pregnancies: How many times the person has had a pregnancies. In this dataset, might we have male and female.
 
@@ -76,6 +76,8 @@ min        0.000000
 75%        6.000000
 max       17.000000
 Name: Pregnancies, dtype: float64
+
+- In Pregnancies column, we have minimun value has 0. Might be there is a chanse of having male persons information. So, we are not taking any action against the minimum value.
 ```
 ## Glucose:
 ```
@@ -99,6 +101,8 @@ min        0.000000
 75%      140.250000
 max      199.000000
 Name: Glucose, dtype: float64
+
+- In Glucose column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun Glucose level will be 100 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the Glucose column has outlies need to use median method only to replace the 0.
 ```
 
 ## BloodPressure:
@@ -113,6 +117,8 @@ min        0.000000
 75%       80.000000
 max      122.000000
 Name: BloodPressure, dtype: float64
+
+- In BloodPressure column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun BloodPressure level will be 80 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the BloodPressure column has outlies need to use median method only to replace the 0.
 
 - It has no Null values.
 - It has skewness with -1.843. so, we need to apply feature transformation techniques to make it as a symmetrical distribution.
@@ -150,6 +156,8 @@ min        0.000000
 75%       32.000000
 max       99.000000
 Name: SkinThickness, dtype: float64
+
+- In BloodPressure column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun BloodPressure level will be 80 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the BloodPressure column has outlies need to use median method only to replace the 0.
 
 - This column does not have any null values.
 - This column has outlier.
@@ -277,4 +285,97 @@ Name: count, dtype: int64
 - It does not have any null values.
 - 0's values are 500 and 1's values are 268.
 - 0's values percentage is 65.104% and 1's values percentage is 34.896% contributing.
+```
+
+# Data Cleaning:-
+```
+# Pregnancies:-
+--------------------------------
+count    768.000000
+mean       3.845052
+std        3.369578
+min        0.000000
+25%        1.000000
+50%        3.000000
+75%        6.000000
+max       17.000000
+Name: Pregnancies, dtype: float64
+
+- In Pregnancies column, we have minimun value has 0. Might be there is a chanse of having male persons information. So, we are not taking any action against the minimum value.
+
+# Glucose:-
+---------------------------------
+count    768.000000
+mean     120.894531
+std       31.972618
+min        0.000000
+25%       99.000000
+50%      117.000000
+75%      140.250000
+max      199.000000
+Name: Glucose, dtype: float64
+
+- In Glucose column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun Glucose level will be 100 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the Glucose column has outlies need to use median method only to replace the 0.
+
+# BloodPressure:-
+---------------------------------
+- BloodPressure column has descrite count values.
+count    768.000000
+mean      69.105469
+std       19.355807
+min        0.000000
+25%       62.000000
+50%       72.000000
+75%       80.000000
+max      122.000000
+Name: BloodPressure, dtype: float64
+
+- In BloodPressure column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun BloodPressure level will be 80 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the BloodPressure column has outlies need to use median method only to replace the 0.
+
+# SkinThickness:-
+---------------------------------
+- SkinThickness column has descrite count variable.
+count    768.000000
+mean      20.536458
+std       15.952218
+min        0.000000
+25%        0.000000
+50%       23.000000
+75%       32.000000
+max       99.000000
+Name: SkinThickness, dtype: float64
+
+- In SkinThickness column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun SkinThickness level will be 1 to 4 mm as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the SkinThickness column has outlies need to use median method only to replace the 0.
+
+# Insulin:-
+----------------------------------
+
+- Insulin column has descrite count variable.
+count    768.000000
+mean      79.799479
+std      115.244002
+min        0.000000
+25%        0.000000
+50%       30.500000
+75%      127.250000
+max      846.000000
+Name: Insulin, dtype: float64
+
+- In Insulin column, we find the minimum value is 0 but con't able to replace the 0 values with measure of central tendency method why because when person has high glucose then the insulin will work interms of reducing the sugar level.
+
+# BMI:-
+------------------------------------
+
+- This column has continuous values.
+count    768.000000
+mean      31.992578
+std        7.884160
+min        0.000000
+25%       27.300000
+50%       32.000000
+75%       36.600000
+max       67.100000
+Name: BMI, dtype: float64
+
+- In BMI column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun BMI level will be 18.5 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the BMI column has outlies need to use median method only to replace the 0.
 ```
