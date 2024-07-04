@@ -933,31 +933,45 @@ except Exception as e:
 
 class Outcome_column:
 
-    Outcome_unique=df['Outcome'].unique()
-    Outcome_values=df['Outcome'].value_counts()
-    Outcome_nunique=df['Outcome'].nunique()
-    Outcome_null=df['Outcome'].isnull().sum()
+    try:
+
+        Outcome_unique=df['Outcome'].unique()
+        Outcome_values=df['Outcome'].value_counts()
+        Outcome_nunique=df['Outcome'].nunique()
+        Outcome_null=df['Outcome'].isnull().sum()
+
+    except Exception as e:
+        raise Exception(f'Error find in Outcome_column :\n'+str(e))
 
 
     def __init__(self,Outcome_unique,Outcome_values,Outcome_nunique,Outcome_null):
 
-        self.Outcome_unique = Outcome_unique
-        self.Outcome_values = Outcome_values
-        self.Outcome_nunique = Outcome_nunique
-        self.Outcome_null = Outcome_null
+        try:
 
+            self.Outcome_unique = Outcome_unique
+            self.Outcome_values = Outcome_values
+            self.Outcome_nunique = Outcome_nunique
+            self.Outcome_null = Outcome_null
 
-    def Outcome_unique_column(self):
-        return self.Outcome_unique
-    
-    def Outcome_values_column(self):
-        return self.Outcome_values
-    
-    def Outcome_nunique_column(self):
-        return self.Outcome_nunique
-    
-    def Outcome_null_column(self):
-        return self.Outcome_null
+        except Exception as e:
+            raise Exception(f'Error find in Outcome_column at init level :\n' + str(e))
+
+    try:
+
+        def Outcome_unique_column(self):
+            return self.Outcome_unique
+        
+        def Outcome_values_column(self):
+            return self.Outcome_values
+        
+        def Outcome_nunique_column(self):
+            return self.Outcome_nunique
+        
+        def Outcome_null_column(self):
+            return self.Outcome_null
+        
+    except Exception as e:
+        raise Exception(f'Error find in Outcome_column at function level :\n' + str(e))
     
 
 # Outcome column pie plot:
