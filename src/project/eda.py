@@ -928,34 +928,62 @@ except Exception as e:
 
 
 
+# Outcome column analysis:
 
 
+class Outcome_column:
+
+    Outcome_unique=df['Outcome'].unique()
+    Outcome_values=df['Outcome'].value_counts()
+    Outcome_nunique=df['Outcome'].nunique()
+    Outcome_null=df['Outcome'].isnull().sum()
 
 
+    def __init__(self,Outcome_unique,Outcome_values,Outcome_nunique,Outcome_null):
+
+        self.Outcome_unique = Outcome_unique
+        self.Outcome_values = Outcome_values
+        self.Outcome_nunique = Outcome_nunique
+        self.Outcome_null = Outcome_null
 
 
+    def Outcome_unique_column(self):
+        return self.Outcome_unique
+    
+    def Outcome_values_column(self):
+        return self.Outcome_values
+    
+    def Outcome_nunique_column(self):
+        return self.Outcome_nunique
+    
+    def Outcome_null_column(self):
+        return self.Outcome_null
+    
 
+# Outcome column pie plot:
 
-
-"""try:
+try:
 
     fig,ax=plt.subplots(figsize=(10,5))
-    plt.pie(x=df['Glucose'].value_counts(),labels=df['Glucose'].unique(),autopct='%0.2f%%',explode=[0,0,0,0.5,0.8])
-    plt.title('Pie plot for Glucose column')
-    plt.savefig('C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/Glucose/Glucose_pie.png')
+    plt.pie(x=df['Outcome'].value_counts(),labels=sorted(df['Outcome'].unique()),autopct='%0.2f%%',explode=[0,0.1])
+    plt.title('Pie plot for Outcome column')
+    plt.legend()
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/Outcome/Outcome_pie.png')
 
 except Exception as e:
     raise Exception(f'error find in pie plot :\n'+str(e))
 
+# Outcome column count plot:
+
 
 try:
 
-    fig,ax=plt.subplots(figsize=(5,5))
-    sns.countplot(data=df,x=df['Glucose'],hue='Glucose',ax=ax)
-    plt.title('Count plot for Glucose column')
-    plt.legend(df['Glucose'].unique())
-    plt.legend(df['Glucose'].value_counts())
-    plt.savefig('C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/Glucose/Glucose_count.png')
+    fig,ax=plt.subplots(figsize=(10,5))
+    sns.countplot(data=df,x=df['Outcome'],hue='Outcome',ax=ax)
+    plt.title('Count plot for Outcome column')
+    plt.legend(df['Outcome'].unique())
+    plt.legend(df['Outcome'].value_counts())
+    plt.savefig('C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/plots/Outcome/Outcome_count.png')
 
 except Exception as e:
-    raise Exception(f'error find in count plot :\n'+str(e))"""
+    raise Exception(f'error find in count plot :\n'+str(e))

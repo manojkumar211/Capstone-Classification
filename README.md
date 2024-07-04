@@ -242,24 +242,39 @@ DiabetesPedigreeFunction Skewness : 1.919911066307204
 ## Age:-
 ```
 - Age column has descrite count values.
-0_pPeak description : count    175729.000000
-mean         -0.174214
-std           0.368802
-min          -7.113196
-25%          -0.176258
-50%          -0.105488
-75%          -0.054578
-max           3.129033
-Name: 0_qPeak, dtype: float64
+count    768.000000
+mean      33.240885
+std       11.760232
+min       21.000000
+25%       24.000000
+50%       29.000000
+75%       41.000000
+max       81.000000
+Name: Age, dtype: float64
 
 - It has some outliers.
 - It does not have any null values.
-- It has variance value with 0.1360. which is very low. nothing but data poits spredding is very near to the mean.
-Age Variance : 0.13601431469058167
+- It has variance value with 138.1229. which is very low. nothing but data poits spredding is very near to the mean.
+Age Variance : 138.12296379937067
 
-- It has standard deviation value with 0.3688. which is very low. nothing but data poits spredding is very near to the mean.
-Age Standard Deviation : 0.36880118585842653
+- It has standard deviation value with 11.7525. which is very low. nothing but data poits spredding is very near to the mean.
+Age Standard Deviation : 11.752572645994181
 
-- This column has with skewness value with -4.572. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
-Age Skewness : -4.572967178212863
+- This column has with skewness value with 1.129. for this we need to apply the feature transformation technique to make the feature symmetrical distribution.
+Age Skewness : 1.1295967011444805
+```
+
+## Outcome:-
+```
+- Outcome column has descrite categorical values.
+array([1, 0], dtype=int64)
+--------------------------------
+Outcome
+0    500
+1    268
+Name: count, dtype: int64
+
+- It does not have any null values.
+- 0's values are 500 and 1's values are 268.
+- 0's values percentage is 65.104% and 1's values percentage is 34.896% contributing.
 ```
