@@ -232,7 +232,7 @@ try:
 except Exception as e:
     raise Exception(f'error find in distribution plot :\n'+str(e))
 
-# Pregnancies column box plot:
+# Glucose column box plot:
 
 try:
 

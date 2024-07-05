@@ -157,7 +157,7 @@ min        0.000000
 max       99.000000
 Name: SkinThickness, dtype: float64
 
-- In BloodPressure column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun BloodPressure level will be 80 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the BloodPressure column has outlies need to use median method only to replace the 0.
+- In SkinThickness column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun SkinThickness level will be 80 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the SkinThickness column has outlies need to use median method only to replace the 0.
 
 - This column does not have any null values.
 - This column has outlier.
@@ -378,4 +378,6 @@ max       67.100000
 Name: BMI, dtype: float64
 
 - In BMI column, we find the minimum value is 0 which mean that the person need medical emergency treatment and minimun BMI level will be 18.5 as per medical rule. So, we are going to replace the 0 values with measure of central tendency methods like mean or median. Since the BMI column has outlies need to use median method only to replace the 0.
+
+- Replaced outliers with lower limits and upper limits. Note:- before replacing outliers with lower limits and upper limits need to coordinate with the domain experts.
 ```
