@@ -381,3 +381,25 @@ Name: BMI, dtype: float64
 
 - Replaced outliers with lower limits and upper limits. Note:- before replacing outliers with lower limits and upper limits need to coordinate with the domain experts.
 ```
+
+# Data Wrangling:-
+```
+- Applied Discretization method on Age column to make bins.
+- Applied feature transformation method to make data from skewed data into symmetrical data. in this method we used root & boxcox techniques.
+- Applied Feature Encoding method to convert alpha categorical into numeric categorical values.
+- Plit the data into X and Y. X - Independent Variables, y- Dependent Variable.
+
+- Applied Standard Scale Method to convert elements from normal magnitude values into z-score values.
+
+- VIF method showing there is no any multicollinarity issue. Which feature has high value like more than 5 or above that feature treated as has multicollinarity.
+
+        VIF                       Features
+0  1.559498               Pregnancies_root
+1  1.164705                   Glucose_root
+2  1.257811             BloodPressure_root
+3  1.529227             SkinThickness_root
+4  1.164797                   Insulin_root
+5  1.612823                       BMI_root
+6  1.073477  DiabetesPedigreeFunction_root
+7  1.830867                        Age_box
+```
