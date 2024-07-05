@@ -47,7 +47,6 @@ vif=pd.DataFrame()
 vif['VIF']=[variance_inflation_factor(X_scale,i) for i in range(X_scale.shape[1])]
 vif['Features']=X.columns
 
-print(vif)
 
 
 
