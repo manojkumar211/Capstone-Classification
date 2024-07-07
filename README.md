@@ -410,3 +410,14 @@ Name: BMI, dtype: float64
 6  1.073477  DiabetesPedigreeFunction_root
 7  1.830867                        Age_box
 ```
+
+# Feature Selection:-
+
+```
+
+- Best Parameters for Decision Tree : {'criterion': 'log_loss', 'max_depth': 4, 'max_leaf_nodes': 5, 'min_samples_leaf': 2, 'min_samples_split': 2, 'splitter': 'random'}
+
+- Importance feature for model : [0.         0.81625979 0.         0.         0.         0.18374021
+ 0.         0.        ]
+
+```
