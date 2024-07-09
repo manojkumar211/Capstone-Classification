@@ -417,7 +417,34 @@ Name: BMI, dtype: float64
 
 - Best Parameters for Decision Tree : {'criterion': 'log_loss', 'max_depth': 4, 'max_leaf_nodes': 5, 'min_samples_leaf': 2, 'min_samples_split': 2, 'splitter': 'random'}
 
-- Importance feature for model : [0.         0.81625979 0.         0.         0.         0.18374021
- 0.         0.        ]
+- Importance feature for model : [0.04220763 0.55296414 0.         0.01171606 0.         0.20774616
+ 0.03103841 0.1543276 ]
 
+
+```
+
+# Logistic Regression:-
+```
+
+Test Accuracy for Logistic Regression : 0.7922077922077922
+Best Test Random state number Logistic Regression : 0
+Train Accuracy for Logistic Regression : 0.7703583061889251
+CV Accuracy for Logistic Regression : 0.7656480774127832
+```
+
+# SVC:-
+```
+
+Test Accuracy for SVC : 0.8506493506493507
+Best Test Random state number SVC : 34
+Train Accuracy for SVC : 0.7801302931596091
+CV Accuracy for SVC : 0.7500891265597147
+```
+
+# Decision Tree:-
+```
+Test Accuracy for Decision Tree : 0.7727272727272727
+Best Test Random state number : 64
+Train Accuracy for Decision Tree : 0.7736156351791531
+CV Accuracy for Decision Tree : 0.7057465410406587
 ```

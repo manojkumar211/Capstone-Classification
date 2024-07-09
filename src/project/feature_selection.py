@@ -26,7 +26,7 @@ class DecisionTree_bestparam:
             X_train_dt,X_test_dt,y_train_dt,y_test_dt=train_test_split(X_scale,y,test_size=0.20,random_state=r)
             dec_modl=DecisionTreeClassifier()
             dec_modl.fit(X_train_dt,y_train_dt)
-            param={'criterion':['gini','entropy', 'log_loss'], 'splitter':['best','random'], 'max_depth':[1,2,3,4,5], 'min_samples_split':[2,3,5],'min_samples_leaf':[1,2,3,4,5], 'max_leaf_nodes':[1,2,3,4,5]}
+            param={'criterion':['gini','entropy', 'log_loss'], 'max_depth':[1,2,3,4,5]}
             d_gcv=GridSearchCV(dec_modl,param_grid=param,cv=5,verbose=5)
             d_gcv.fit(X_train_dt,y_train_dt)
             best_param=d_gcv.best_params_
@@ -65,5 +65,6 @@ plt.savefig('C:/AI&ML Engineer/Projects/Apple/diabetes Prediction/src/project/fe
 
 feat_imp=pd.DataFrame(data=DecisionTree_bestparam.d_gcv.best_estimator_.feature_importances_,index=X.columns,columns=['Feature_Importance'])
 feature_imp=feat_imp[feat_imp['Feature_Importance']>0]
-feature_selection=feature_imp.index.tolist()
-X_new=df.loc[:,['Glucose_root','BMI_root','Age_box']]
+feature_selection=feature_imp.index.to_list()
+
+X_new=X[feature_selection]
