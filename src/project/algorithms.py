@@ -411,7 +411,7 @@ class ANN_model(Ann_Randomstate):
             self.log_dir = log_dir
             self.tensorboard_cb = tensorboard_cb
             self.test_rand_ann=test_rand_ann
-            self.tensorboard_cb=tensorboard_cb
+            self.tensorboard_cp=tensorboard_cp
             self.early_stop=early_stop
             self.checkpoint_cp=checkpoint_cp
             self.callback_list=callback_list
