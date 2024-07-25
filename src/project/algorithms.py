@@ -385,27 +385,37 @@ class ANN_model(Ann_Randomstate):
     try:
 
         X_train_ann,X_test_ann,y_train_ann,y_test_ann=train_test_split(X_scale_new,y,test_size=0.2,random_state=np.argmax(Ann_Randomstate.test_rand_ann))
-        ann=Sequential()
-        ann.add(Dense(input_dim=5,units=9,activation='relu',kernel_initializer='uniform'))
-        ann.add(Dense(units=1,activation='sigmoid',kernel_initializer='uniform'))
-        ann.compile(optimizer='adam',loss='binary_crossentropy',metrics=['Accuracy'])
+        ann_model=Sequential()
+        ann_model.add(Dense(input_dim=5,units=9,activation='relu',kernel_initializer='uniform'))
+        ann_model.add(Dense(units=1,activation='sigmoid',kernel_initializer='uniform'))
+        ann_model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['Accuracy'])
         log_dir="C:/DataScience/log/fit/"+time.asctime().replace(" ","_").replace(":","_")
-        tensorboard_cb=tf.keras.callbacks.TensorBoard(log_dir=log_dir)
-        ann.fit(x=X_train_ann,y=y_train_ann,batch_size=5,epochs=100,callbacks=tensorboard_cb)
-        ann_test_pred=ann.predict(X_test_ann)
+        tensorboard_cp=tf.keras.callbacks.TensorBoard(log_dir=log_dir)
+        early_stop=tf.keras.callbacks.EarlyStopping(patience=5,restore_best_weights=True)
+        ckpt_path="C:/DataScience/models/model_ckpt.keras"
+        checkpoint_cp=tf.keras.callbacks.ModelCheckpoint(ckpt_path,save_best_only=True)
+        callback_list=[tensorboard_cp,early_stop,checkpoint_cp]
+        ann_model.fit(x=X_train_ann,y=y_train_ann,batch_size=5,epochs=100,callbacks=callback_list)
+        ann_test_pred=ann_model.predict(X_test_ann)
         ann_best=(ann_test_pred>0.5)
         print("Accuracy of ANN model :",accuracy_score(y_test_ann,ann_best))
 
     except Exception as e:
         raise Exception(f'Error in ANN model level :\n'+str(e))
 
-    def __init__(self,ann,log_dir,tensorboard_cb,test_rand_ann):
+    def __init__(self,ann,log_dir,tensorboard_cb,test_rand_ann,tensorboard_cp,early_stop,checkpoint_cp,callback_list):
 
         try:
 
             self.ann = ann
             self.log_dir = log_dir
             self.tensorboard_cb = tensorboard_cb
+            self.test_rand_ann=test_rand_ann
+            self.tensorboard_cb=tensorboard_cb
+            self.early_stop=early_stop
+            self.checkpoint_cp=checkpoint_cp
+            self.callback_list=callback_list
+
 
         except Exception as e:
             raise Exception(f'Error in ANN_model init level :\n'+str(e))
@@ -423,6 +433,18 @@ class ANN_model(Ann_Randomstate):
         
         def test_rand_ann_defin(self):
             return super().test_rand_ann
+        
+        def tensorboard_cp_defin(self):
+            return super().tensorboard_cp
+        
+        def early_stop_defin(self):
+            return super().early_stop
+        
+        def checkpoint_cp_defin(self):
+            return super().checkpoint_cp
+        
+        def callback_list_defin(self):
+            return super().callback_list
         
     except Exception as e:
         raise Exception(f'Error in ANN_model define level :\n'+str(e))
