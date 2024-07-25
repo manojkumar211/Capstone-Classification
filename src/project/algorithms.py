@@ -13,6 +13,14 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import StandardScaler
 from data_wrangling import df, X, y
 from feature_selection import X_new
+import tensorflow as tf
+import tensorboard
+import keras
+from tensorflow.keras.models import Sequential,load_model
+from tensorflow.keras.layers import Dense
+import os
+import time
+
 
 
 
@@ -349,3 +357,79 @@ print("Test Accuracy for SVC :",SVC_Classification.accuracy_svc_test)
 print("Best Test Random state number SVC :",np.argmax(SVC_Classification.svc_test_random))
 print("Train Accuracy for SVC :",SVC_Classification.accuracy_svc_train)
 print("CV Accuracy for SVC :",SVC_Classification.cross_val_svc)
+
+
+class Ann_Randomstate:
+
+    try:
+
+        test_rand_ann=[]
+
+        for i in range(0,10):
+            
+            X_train_ann,X_test_ann,y_train_ann,y_test_ann=train_test_split(X_scale_new,y,test_size=0.2,random_state=i)
+            ann=Sequential()
+            ann.add(Dense(input_dim=5,units=9,activation='relu',kernel_initializer='uniform'))
+            ann.add(Dense(units=1,activation='sigmoid',kernel_initializer='uniform'))
+            ann.compile(optimizer='adam',loss='binary_crossentropy',metrics=['Accuracy'])
+            ann.fit(X_train_ann,y_train_ann,batch_size=5,epochs=100)
+            ann_test_pred=ann.predict(X_test_ann)
+            ann_best=(ann_test_pred>0.5)
+            test_rand_ann.append(accuracy_score(y_test_ann,ann_best))
+
+    except Exception as e:
+        raise Exception(f'Error find in ANN Randomstate level :\n'+str(e))
+
+class ANN_model(Ann_Randomstate):
+
+    try:
+
+        X_train_ann,X_test_ann,y_train_ann,y_test_ann=train_test_split(X_scale_new,y,test_size=0.2,random_state=np.argmax(Ann_Randomstate.test_rand_ann))
+        ann=Sequential()
+        ann.add(Dense(input_dim=5,units=9,activation='relu',kernel_initializer='uniform'))
+        ann.add(Dense(units=1,activation='sigmoid',kernel_initializer='uniform'))
+        ann.compile(optimizer='adam',loss='binary_crossentropy',metrics=['Accuracy'])
+        log_dir="C:/DataScience/log/fit/"+time.asctime().replace(" ","_").replace(":","_")
+        tensorboard_cb=tf.keras.callbacks.TensorBoard(log_dir=log_dir)
+        ann.fit(x=X_train_ann,y=y_train_ann,batch_size=5,epochs=100,callbacks=tensorboard_cb)
+        ann_test_pred=ann.predict(X_test_ann)
+        ann_best=(ann_test_pred>0.5)
+        print("Accuracy of ANN model :",accuracy_score(y_test_ann,ann_best))
+
+    except Exception as e:
+        raise Exception(f'Error in ANN model level :\n'+str(e))
+
+    def __init__(self,ann,log_dir,tensorboard_cb,test_rand_ann):
+
+        try:
+
+            self.ann = ann
+            self.log_dir = log_dir
+            self.tensorboard_cb = tensorboard_cb
+
+        except Exception as e:
+            raise Exception(f'Error in ANN_model init level :\n'+str(e))
+        
+    try:
+
+        def ann_model_defin(self):
+            return self.ann
+        
+        def log_dir_defin(self):
+            return self.log_dir
+        
+        def tensorboard_cb_defin(self):
+            return self.tensorboard_cb
+        
+        def test_rand_ann_defin(self):
+            return super().test_rand_ann
+        
+    except Exception as e:
+        raise Exception(f'Error in ANN_model define level :\n'+str(e))
+    
+        
+
+    
+    
+
+        
