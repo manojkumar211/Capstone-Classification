@@ -392,7 +392,7 @@ class ANN_model(Ann_Randomstate):
         log_dir="C:/DataScience/log/fit/"+time.asctime().replace(" ","_").replace(":","_")
         tensorboard_cp=tf.keras.callbacks.TensorBoard(log_dir=log_dir)
         early_stop=tf.keras.callbacks.EarlyStopping(patience=5,restore_best_weights=True)
-        ckpt_path="C:/DataScience/models/model_ckpt.keras"
+        ckpt_path="model_ckpt.keras"
         checkpoint_cp=tf.keras.callbacks.ModelCheckpoint(ckpt_path,save_best_only=True)
         callback_list=[tensorboard_cp,early_stop,checkpoint_cp]
         ann_model.fit(x=X_train_ann,y=y_train_ann,batch_size=5,epochs=100,callbacks=callback_list)
